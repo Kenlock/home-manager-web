@@ -15,6 +15,18 @@ class CreateHousesTable extends Migration
     {
         Schema::create('houses', function (Blueprint $table) {
             $table->increments('id');
+            $table->string('name');
+            $table->decimal('rate', 15, 5);
+            $table->integer('max_guests');
+            $table->integer('max_parking');
+            $table->integer('bathrooms');
+            $table->integer('area'); // in square metres
+            $table->longText('desc');
+            $table->string('type');
+
+            $table->integer('addr_id')->unsigned();
+            $table->foreign('addr_id')->references('id')->on('addresses')->onDelete('cascade');
+
             $table->timestamps();
         });
     }

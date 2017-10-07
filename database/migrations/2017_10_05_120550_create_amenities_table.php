@@ -15,6 +15,10 @@ class CreateAmenitiesTable extends Migration
     {
         Schema::create('amenities', function (Blueprint $table) {
             $table->increments('id');
+            $table->string('name');
+            $table->longText('desc')->nullable();
+            $table->string('icon')->nullable();
+
             $table->timestamps();
         });
     }
