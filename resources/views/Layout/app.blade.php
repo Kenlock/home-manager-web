@@ -29,6 +29,8 @@
         <link href='' rel='stylesheet' type='text/css'>
 	</head>
     <body ng-app="myapp">
+
+        <!-- navigation bar -->
         <nav>
             <div class="nav-wrapper">
                 <a href="#" class="brand-logo">Logo</a>
@@ -46,49 +48,58 @@
                 </ul>
             </div>
         </nav>
+        <!-- end navigation bar -->
 
+        <!-- main content -->
         <div class="container">
             @yield('content')
         </div>
-				<!-- Angular Js -->
-				<script src = "https://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
-				<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.1/angular-animate.js"></script>
-				<script src = '{% static "js/ngMessages.js" %}'></script>
-				<script src = '{% static "js/ngAutocomplete.js" %}'></script>
+        <!-- end main content -->
 
-				<script type="text/javascript" src="http://maps.google.com/maps/api/js?key=AIzaSyB9wi2d0r__Wgv9PECtIRgcrTsJ8Jlgz60&libraries=places&sensor=false"></script>
-				<script>
-					var myApp = angular.module("myapp",['ngMessages','ngAutocomplete','ngAnimate']);
-					myApp.config(function($interpolateProvider) {
-						$interpolateProvider.startSymbol('[[');
-						$interpolateProvider.endSymbol(']]');
-					});
+        <!-- footer -->
+        <footer></footer>
+        <!-- end footer -->
 
-				  myApp.controller('ngCtrl', ['$scope', function($scope) {
-				    $scope.address = {
-
-				    };
-						$scope.change = function() {
-
-							var object_var = $scope.address.formattedAddress;
-							var input_var = $('#addr_auto');
-
-							if ((object_var === undefined) && input_var.val() ) {
-								$scope.hasData = true;
-							}
-							else{
-								$scope.hasData = false;
-							}
-
-						}
-				  }]);
-
-
-				</script>
         <!-- jQuery -->
-        <script src="{% static "js/jquery.min.js" %}"></script>
+        <script src="{{ url('js/jquery.min.js') }}"></script>
+		<!-- Angular Js -->
+		<script src = "https://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.1/angular-animate.js"></script>
+		<script src = '{{ url("js/ngMessages.js") }}'></script>
+		<script src = '{{ url("js/ngAutocomplete.js") }}'></script>
+
+		<script type="text/javascript" src="http://maps.google.com/maps/api/js?key=AIzaSyB9wi2d0r__Wgv9PECtIRgcrTsJ8Jlgz60&libraries=places&sensor=false"></script>
+		<script>
+			var myApp = angular.module("myapp",['ngMessages','ngAutocomplete','ngAnimate']);
+			myApp.config(function($interpolateProvider) {
+				$interpolateProvider.startSymbol('[[');
+				$interpolateProvider.endSymbol(']]');
+			});
+
+		  myApp.controller('ngCtrl', ['$scope', function($scope) {
+		    $scope.address = {
+
+		    };
+				$scope.change = function() {
+
+					var object_var = $scope.address.formattedAddress;
+					var input_var = $('#addr_auto');
+
+					if ((object_var === undefined) && input_var.val() ) {
+						$scope.hasData = true;
+					}
+					else{
+						$scope.hasData = false;
+					}
+
+				}
+		  }]);
+
+
+		</script>
+        
         <!-- Materialize JS -->
-        <script src="{% static "js/materialize.js" %}"></script>
+        <script src="{{ url('js/materialize.js') }}"></script>
 
         <script type="text/javascript">
             $(document).ready(function(){

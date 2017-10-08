@@ -10,6 +10,6 @@ class House extends Model
 
     public function address()
     {
-    	return $this->belongsTo('addresses');
+    	return $this->belongsTo('App\Models\Address', 'addr_id', 'id');
     }
 }
