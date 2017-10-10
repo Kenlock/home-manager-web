@@ -5,7 +5,7 @@
 @if (isset($house))
 
 <div class="col s12 house-image-s">
-      <img src="" alt="" >
+      <img src="https://cdn.houseplans.com/product/o2d2ui14afb1sov3cnslpummre/w560x373.jpg?v=15" alt="" >
 </div>
 
 <div class="container" ng-controller="ngCtrl">

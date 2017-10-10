@@ -4,12 +4,12 @@
 
 @if (isset($house) && $house != null)
 <div class="col s12 house-image">
-        <img src="" alt="" >
+        <img src="https://cdn.houseplans.com/product/o2d2ui14afb1sov3cnslpummre/w560x373.jpg?v=15" alt="" >
 </div>
 
 <div class="container">
     <div class="row">
-    <div class="col s12 m8">
+    <div class="col s12 m9">
     <div class="col s12 house-info">
         <h4 class="house-title s12 left-align">{{ $house->name }}</h4>
         <span class="house-address">{{ $house->address }}</span>
@@ -76,8 +76,29 @@
         </div>
     </div>
     </div>
-    <div class="m4 col hide-on-small-only">
-        side booking
+    <div class="m3 col hide-on-small-only book_side z-depth-3" >
+        <h5 class="modal-book-title ">
+            ${{ sprintf("%01.2f", $house->rate) }} <span style="font-weight: 300; font-size: 70%;">per night</span>
+        </h5>
+        <form class="col s12" id="book-now-m" action="{{ route('confirmation') }}" method="get">
+
+        
+                <div class="input-field col s6 m12">
+                    <input id="check-in" placeholder="dd-mm-yyyy" type="text" class="datepicker" name="check_in">
+                    <label for="check-in">Check-In Date</label>
+                </div>
+                <div class="input-field col s6 m12">
+                    <input id="check-out" placeholder="dd-mm-yyyy" type="text" class="datepicker" name="check_out">
+                    <label for="check-out">Check-Out Date</label>
+                </div>
+                <div class="input-field col s12">
+                    <input id="house_id" type="hidden" value="{{ $house->id }}" name="house_id"/>
+                    <button class="btn waves-effect waves-light btn-m-book">
+                        Book Now
+                    </button>
+                </div>
+            
+         </form>
     </div>
     </div>
 </div>

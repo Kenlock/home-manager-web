@@ -20,6 +20,11 @@ h1, h2, h3, h4, h5 {
         display: none !important;
     }
 }
+
+nav .nav-wrapper a {
+  color: #64b5f6 !important;
+}
+
 .grey-font {
     color: #858585;
 }
@@ -199,3 +204,67 @@ div.input-field {
 .pac-logo::after, .hdpi.pac-logo::after {
   background: none;height:0;
 }
+
+.book_side {
+  padding:0 0 10px 0 !important;
+}
+
+.book_side form {
+  padding: 10px !important;
+}
+
+/* parallex */
+
+p {
+  line-height: 2rem;
+}
+
+.button-collapse {
+  color: #26a69a;
+}
+
+.parallax-container {
+  min-height: 380px;
+  line-height: 0;
+
+  color: rgba(255,255,255,.9);
+}
+  .parallax-container .section {
+    width: 100%;
+  }
+
+@media only screen and (max-width : 992px) {
+  .parallax-container .section {
+    position: absolute;
+    top: 40%;
+  }
+  #index-banner .section {
+    top: 10%;
+  }
+}
+
+@media only screen and (max-width : 600px) {
+  #index-banner .section {
+    top: 0;
+  }
+}
+
+.icon-block {
+  padding: 0 15px;
+}
+.icon-block .material-icons {
+  font-size: inherit;
+}
+
+footer.page-footer {
+  margin: 0;
+}
+
+#main-search-form {
+  padding:20px;
+  background-color: rgba(0,0,0,0.3);
+}
+#main-search-form .form-group {
+  padding:8px;
+}
+
