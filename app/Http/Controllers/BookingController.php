@@ -27,11 +27,11 @@ class BookingController extends Controller
     	$house->days = $daysDiff;
     	$house->total_amount = $daysDiff * $house->rate;
 
-
-
     	$house->address;
+        
 
-    	 return view('Booking.confirmation', compact('house'));
+
+    	return view('Booking.confirmation', compact('house'));
 
     }
 }
