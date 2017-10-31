@@ -56,7 +56,7 @@
                     <div class="col s5 m3 ">Bathroom</div>
                     <div class="col s7 m3 ">{{ $house->bathrooms }}</div>
                     <div class="col s5 m3 ">Bedroom</div>
-                    <div class="col s7 m3 ">0</div>
+                    <div class="col s7 m3 ">{{ sizeof($house->bedrooms) }}</div>
                     <div class="col s5 m3 ">Room Type</div>
                     <div class="col s7 m3 ">{{ $house->type }}</div>
                     <div class="col s5 m3 ">Area</div>
@@ -73,23 +73,18 @@
                 </div>
             </div>
 
+            @if (isset($house->amenities) && sizeof($house->amenities) > 0)
             <!-- Amenities -->
             <div class="col s12 amenities-info section scrollspy">
                 <h5 class="info-title s12 left-align">Amenities</h5>
                 <div class="row">
-                    <div class="col s6 m4 l3">Internet</div>
+                    @foreach($house->amenities as $amenity)
+                    <div class="col s6 m4 l3">{{$amenity->name}}</div>
 
-                    <div class="col s6 m4 l3">Wireless</div>
-
-                    <div class="col s6 m4 l3">Swimming</div>
-
-                    <div class="col s6 m4 l3">BBQ</div>
-
-                    <div class="col s6 m4 l3">Kitchen</div>
-
+                    @endforeach
                 </div>
             </div>
-
+            @endif
             <!-- The Rules -->
             <div class="col s12 rule-info section scrollspy">
                 <h5 class="info-title s12 left-align">Rules</h5>

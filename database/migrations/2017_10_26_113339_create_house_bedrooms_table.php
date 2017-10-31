@@ -20,7 +20,7 @@ class CreateHouseBedroomsTable extends Migration
             $table->foreign('house_id')->references('id')->on('houses')->onDelete('cascade');
 
             $table->integer('bedroom_id')->unsigned();
-            $table->foreign('bedroom_id')->references('id')->on('bedroomds')->onDelete('cascade');
+            $table->foreign('bedroom_id')->references('id')->on('bedrooms')->onDelete('cascade');
 
             $table->timestamps();
         });

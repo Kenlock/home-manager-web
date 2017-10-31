@@ -21,6 +21,7 @@ class CreateBedroomsTable extends Migration
             $table->integer('single_bed');
             $table->integer('sofa_bed');
             $table->integer('added_bed');
+            $table->boolean('en_suite');
             $table->timestamps();
         });
     }

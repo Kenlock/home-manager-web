@@ -13,5 +13,7 @@
 
 Route::get('/', "HomeController@index")->name('home-page');
 Route::get('/booking/confirmation', 'BookingController@confirmation')->name('confirmation');
+Route::post('/booking/payment', 'BookingController@payment')->name('payment');
+
 Route::Resource('house', 'HouseController');
 

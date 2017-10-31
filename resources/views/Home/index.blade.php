@@ -8,7 +8,7 @@
         <br/>
         <h1 class="header center teal-text text-lighten-2"></h1>
         <div class="row center">
-          <h5 class="header col s12 light">Your Dreaming Destination</h5>
+          <h5 class="header col s12 light">Yours Dreaming Destination</h5>
         </div>
         <div class="row center" >
 			     <form class="form-inline" id="main-search-form" role="form" style="">

@@ -34,4 +34,11 @@ class BookingController extends Controller
     	return view('Booking.confirmation', compact('house'));
 
     }
+
+    public function payment(Request $request)
+    {
+        $input = $request->all();
+
+        dd($input);
+    }
 }
